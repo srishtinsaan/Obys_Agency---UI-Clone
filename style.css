@@ -104,3 +104,74 @@ html,body{
     height: 100vh
     
 }
+
+#page1 #nav{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4vw;
+    padding-left: 9vw;
+    padding-right: 5vw;;
+}
+
+#nav-part2{
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3vw;
+}
+#nav-part2 h4{
+    font-weight: 500;
+    font-size: 1.1vw;
+    font-family: "plain light";
+}
+.hero{
+    /* background-color: green; */
+    padding-left: 30vw;
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.hero:nth-child(2){
+    padding-top: 6vh;
+}
+.hero h1{
+    font-family: plain;
+    font-size: 8vw;
+    line-height: 8vw;
+    font-weight: 550;
+    text-transform: uppercase;
+    
+}
+
+#cursor{
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    /* background-color: #000000; */
+    position: fixed;
+    z-index: 99999;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    mix-blend-mode: difference;
+    transform: translate(-50%,-50%);  
+    /* above is to make sure cursor follows cursor's centre not right or left part */
+}
+
+#hero3 h2{
+    text-decoration: underline;
+    font-family: plain;
+    font-size: 8vw;
+    line-height: 8vw;
+    font-weight: 550;
+    text-transform: uppercase;
+    align-items: center;
+}
+.hero h2:hover{
+    -webkit-text-stroke: 0.3px #fff ;
+    color: transparent;
+}
