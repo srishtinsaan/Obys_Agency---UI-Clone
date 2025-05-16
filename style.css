@@ -270,9 +270,11 @@ html,body{
 }
 #page4-content .underline {
     height: 1px;
-    width: 100%;
+    width: 95%;
     background-color: #fff;
-    margin: 5vw 0;
+    margin: 4vw 0vw;
+    padding-right: 66vw;
+    overflow-x: hidden;
 }
 #page4-content p {
     font-size: 2.05vw;
@@ -293,17 +295,15 @@ html,body{
     width: 29%;
     margin-left: 1vw;
 }
-
 #page4-blue-div {
     background-color: #3F7DF4;
     width: 44vw;
     padding: 3vw;
     position: relative;
     margin-top: -35vh;
-    margin-left: 26vw;
+    margin-left: 24vw;
     font-size: 5vh;
 }
-
 .blue-div-elem {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -319,18 +319,87 @@ html,body{
     padding-bottom: 1vw;
     border-bottom: 2px solid #ffffff94;
 }
-
 .blue-div-elem h4 {
     font-size: 1.4vw;
     font-weight: 500;
 }
-
 #page4 .blue-div-elem p {
     font-size: 1.4vw;
     font-weight: 500;
     width: 70%;
 
 }
+#page4 h5{
+    font-weight: 300;
+}
+#page5{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+#page5 .elem, .elem1{
+    overflow-x: hidden;
+    white-space: nowrap;
+    margin: 0vw;
+    padding: 0vw;
+    line-height: 13vh;
+}
+.elem h1{
+    font-family: silk serif;
+    /* background-color:gray; */
+    font-size : 7vw;
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    font-weight: 300;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 16px;
+    animation-name: motion;
+    animation-duration: 18s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+.elem1 h1{
+    font-family: silk serif;
+    /* background-color: red; */
+    font-size : 7vw;
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    font-weight: 300;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 16px;
+    animation-name: motion;
+    animation-duration: 18s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+
+}
+@keyframes motion {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(calc(-100% - 20px)); /* it is not -20% it is dash  */
+    }
+}
+#page5 .elem span{
+    font-family: plain light;
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+}
+#page5 .elem1 span{
+    font-family: plain light;
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+}
+
+
+
+
+
 
 
 
