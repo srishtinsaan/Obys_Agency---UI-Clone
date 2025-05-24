@@ -1,3 +1,20 @@
+@font-face {
+    font-family: "plain light";
+    src: url(./fonts/plain-regular-webfont.ttf);
+}
+@font-face {
+    font-family: "plain light";
+    src: url(./fonts/plain-light-webfont.ttf);
+}
+@font-face {
+    font-family: "silk serif";
+    src: url(./fonts/silkserif-regularitalic-webfont.ttf);
+}
+@font-face {
+    font-family: "silk serif";
+    src: url(./fonts/silkserif-lightitalic-webfont.ttf);
+} 
+
 *{
     margin: 0;
     padding: 0;
@@ -8,6 +25,24 @@ html,body{
     height: 100%;
     width:  100%;
     overflow-x: hidden;
+}
+#cursor{
+    pointer-events: none;
+    /* above prevents the cursor div from blocking interaction and scrolling. */
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    background-color: transparent;
+    /* background: linear-gradient(to bottom, #000000, #1a1a1a); */
+    box-shadow: 0 0 8px white;
+    position: fixed;
+    z-index: 999;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    mix-blend-mode: exclusion;
+    transform: translate(-50%,-50%);  
+    /* above is to make sure cursor follows cursor's centre not right or left part */
 }
 #loader{
     height: 100%;
@@ -112,7 +147,7 @@ html,body{
     justify-content: space-between;
     padding: 4vw;
     padding-left: 9vw;
-    padding-right: 5vw;;
+    padding-right: 5vw;
 }
 #nav-part2{
     /* background-color: green; */
@@ -157,22 +192,7 @@ html,body{
     left: 20%;
     top: 20%;
 }
-#cursor{
-    pointer-events: none;
-    /* above prevents the cursor div from blocking interaction and scrolling. */
-    height: 3vw;
-    width: 3vw;
-    border-radius: 50%;
-    /* background-color: #000000; */
-    position: fixed;
-    z-index: 999;
-    border-style: solid;
-    border-color: white;
-    border-width: 1px;
-    mix-blend-mode: difference;
-    transform: translate(-50%,-50%);  
-    /* above is to make sure cursor follows cursor's centre not right or left part */
-}
+
 #hero3 h2{
     /* text-decoration: underline; */
     font-family: plain;
@@ -203,56 +223,176 @@ html,body{
     border-bottom: 1.1vh solid transparent;
     /* border-bottom-color: black; */
 }
+
+
 #page2{
     height: 100vh;
     width: 100%;
     position: relative;
     padding-top: 17vh;
 }
-#video1{
-    /* background-color: #ad3434; */
+#video-container{
+    background-color: #ad3434;
     height: 66vh;
     width: 71vw;
     position:relative;
-    left: 27%;
+    left: 28%;
     background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+    background-size: cover;
+    background-position: center;
 }
-#video1 img{
-    position: absolute;
+#video-container video{
     object-fit: cover;
     height: 100%;
     width: 100%;
+    opacity:0;
 }
-#video1 video{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    overflow: hidden;
-}
-#video1 #cursor2{
-    position: absolute;
-    left: 80%;
-    top:-10;
-    pointer-events: none;
+
+#video-cursor{
     background-color: #FFA63D;
-    height: 8vw;
-    width: 8vw;
+    height: 9vw;
+    width: 9vw;
     border-radius: 50%;
-    border-width: 1px;
-    z-index: 9999;
+    position: absolute;
+    top: -15%;
+    left: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    transform: translate(-50%,-50%);
 }
-#cursor2 i{
+
+#video-cursor i{
     font-size: 4vh;
 }
 #page3{
     min-height: 100vh;
-    width: 100%;
+    width: 100vw;
     position: relative;
+    font-family: "plain light";
+    padding: 10vh 4vw;
+    margin-bottom: 20vh;
+    
+}
+#page3 .underline{
+    height: 1px;
+    width: 68%;
+    background-color: #fff;
+    margin: 2vw 0vw;
+    margin-left: 28%;
+    padding-right: 66vw;
+    overflow-x: hidden;
+}
+#page3 h1 {
+    font-size: 7vw;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 28%;
+}
+#page3 h1::before {
+    content: "02";
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 100;
+    font-family: "silk serif";
+    left: -12%;
+    top: 8%;
+}
+#page3 #image-div-containers{
+    /* background-color:red;  */
+    margin-top: 10vw;
+    padding: 1vw;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+.image-div{
+    height: 38vw;
+    width: 25vw;
+    background-color: gainsboro;
+    position: relative;
+    overflow: hidden;
+    margin: 2vw 2vw;
+}
+.image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.image-div:nth-child(2){
+    height: 42vw;
+    width: 25vw;
+}
+.image-div:nth-child(3){
+    margin-top: 9vw;
+}
+.page3-circle1{
+    position: relative;
+    height: 25vw;
+    width: 25vw;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 17vw;
+    margin-left: 6vw;
+}
+.page3-circle1 svg{
+    height: 30%;
+}
+.page3-circle2{
+    position: relative;
+    height: 25vw;
+    width: 25vw;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page3-circle2 svg{
+    height: 30%;
+    rotate: -45deg;
+}
+.circle-in{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffff;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0;
+    border-radius: 50%;
+    transition: all ease 0.5s;
+    transition-delay: 0.1s;
+
+}
+.circle-in p{
+    font-size: 1.2vw;
+    color: black;
+    width: 60%;
+    font-weight: 400;
+    scale: 0;
+    transition: all ease 0.1s;
+    transition-delay: 0.6s;
+}
+.page3-circle1:hover .circle-in{
+    scale: 1;
+}
+.page3-circle2:hover .circle-in{
+    scale: 1;
+}
+.page3-circle1:hover .circle-in p,
+.page3-circle2:hover .circle-in p {
+    scale: 1;
 }
 #page4 {
     min-height: 100vh;
@@ -284,7 +424,7 @@ html,body{
     height: 1px;
     width: 95%;
     background-color: #fff;
-    margin: 4vw 0vw;
+    margin: 2vw 0vw;
     padding-right: 66vw;
     overflow-x: hidden;
 }
@@ -436,6 +576,26 @@ html,body{
     left: -12%;
     top: 8%;
 }
+#footer-text h2 {
+    font-size: 7.2vw;
+    text-transform: uppercase;
+    position: absolute;
+    top: -10%;
+    font-weight: 500;
+
+    left: 0;
+    font-family: "silk serif";
+}
+#footer-text {
+    position: relative;
+    /* background-color: red; */
+}
+#footer-text h2 span {
+    font-family: "silk serif";
+    opacity: 0;
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+}
 #footer-div{
     display: flex;
     align-items: flex-start;
@@ -455,7 +615,23 @@ html,body{
      font-size: 1.1vw;
     font-weight: 500;
 }
-
+._canvas_container{
+    z-index: 9999999999999 !important;
+    pointer-events: none;
+}
+#flag{
+    height: 25vw;
+    position: absolute;
+    top:0;
+    left:0;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+#hero3{
+    /* background-color: red; */
+    position: relative; 
+    z-index: 9999;
+}
 
 
 

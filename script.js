@@ -39,6 +39,59 @@ document.addEventListener("mousemove", (e) => {
     moveCursorX(e.clientX);
     moveCursorY(e.clientY);
 });
+
+
+let videoContainer = document.querySelector(`#video-container`);
+let video = document.querySelector(`#video-container video`);
+let videoCursor = document.querySelector(`#video-cursor`);
+
+videoContainer.addEventListener('mouseenter', function(){
+    videoContainer.addEventListener('mousemove',function(dets){
+        gsap.to(`#cursor`,{
+            opacity:0
+        })
+        gsap.to(`#video-cursor`, {
+            left: dets.x - 600,
+            y:dets.y - 300
+        })
+    })
+})
+
+videoContainer.addEventListener('mouseleave',function(){
+    gsap.to(`#cursor`,{
+        opacity:1
+    })
+    gsap.to(`#video-cursor`,{
+        top:'-15%',
+        left: '70%'
+    })
+})
+
+let flag = 0;
+
+videoContainer.addEventListener('click', function(){
+    if(flag == 0){
+        video.play();
+        video.style.opacity = 1;
+
+        videoCursor.innerHTML = `<i class="ri-pause-mini-line"></i>`
+
+        gsap.to(`#video-cursor`,{
+            scale:0.8
+        })
+        flag = 1;
+    }else{
+        video.pause();
+        video.style.opacity = 0;
+
+        videoCursor.innerHTML = `<i class="ri-play-mini-line"></i>`
+
+        gsap.to(`#video-cursor`,{
+            scale:1
+        })
+        flag = 0;
+    }
+})
 }
 
 function loadingAnimation(){
@@ -68,18 +121,10 @@ tl.from(`#line1-part1, .line h2`,{
 })
 
 
-// t1.to(`.line h2`,{
-//     animationName: `anime`,
-//     // opacity: 0,
-//     // duration:2.1,
-//     // delay:2.2,
-// })
-
-
 tl.to(`#loader`,{
     opacity: 0,
     duration:0.7,
-    delay:2.2,
+    // delay:2.2,
 })
 
 
@@ -103,6 +148,10 @@ tl.from(`#nav`,{
     opacity:0,
 })
 
+tl.from(`#hero1` , {
+    opacity:0,
+},"-=1.2") // timeline me elem ko 1.2 pehle chalaega.yani hero1 ko pehle chalaega then baki sabhi ko
+
 }
 
 function magnetAnimation(){
@@ -113,31 +162,87 @@ function magnetAnimation(){
     });
 }
 
-function cursor2_Animation(){
-    const moveCursorX = gsap.quickTo("#cursor2", "left", { duration: 0.2, ease: "power3" });
-    const moveCursorY = gsap.quickTo("#cursor2", "top", { duration: 0.2, ease: "power3" });
-    let container = document.querySelector(`video1`)
-    container.addEventListener("mousemove", (e) => {
-    moveCursorX(e.clientX);
-    moveCursorY(e.clientY);
-});
+function sheryAnimation() {
+  Shery.imageEffect(".image-div", {
+    style: 5,
+    gooey: true,
+    // debug:true,
+    config: {"a":{"value":0.46,"range":[0,30]},"b":{"value":-0.88,"range":[-1,1]},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":0.657904875198506},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":0.5,"y":0.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":true},"infiniteGooey":{"value":false},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.21,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":true},"onMouse":{"value":0},"noise_speed":{"value":0.2,"range":[0,10]},"metaball":{"value":0.4,"range":[0,2]},"discard_threshold":{"value":0.5,"range":[0,1]},"antialias_threshold":{"value":0,"range":[0,0.1]},"noise_height":{"value":0.32,"range":[0,2]},"noise_scale":{"value":10,"range":[0,100]}}
+    
+  });
 }
 
-function playvideo(){
-    let icon = document.querySelector(`#cursor2 i`);
-    let video = document.querySelector(`#video1 video`);
-    let overlayimage = document.querySelector(`#video1 img`)
-    icon.addEventListener( `onclick`, function(){
-        overlayimage.style.opacity = "0"; 
-        video.play()
+function flagAnimation(){
+    document.addEventListener('mousemove', function(dets){
+        gsap.to(`#flag`,{
+            x:dets.x,
+            y: dets.y
+        })
     })
+    document.querySelector(`#hero3 h2`).addEventListener(`mouseenter`, function(){
+    gsap.to(`#flag`,{
+        opacity:1
+    })
+    })
+
+document.querySelector(`#hero3 h2`).addEventListener(`mouseleave`, function(){
+    gsap.to(`#flag`,{
+        opacity:0
+    })
+})
+
+
 }
+
+function footerAnimation() {
+    let clutter1 = ""
+    let clutter2 = ""
+    let footerText = document.querySelector("#footer-text")
+    let h1 = document.querySelector("#footer h1")
+    let h2 = document.querySelector("#footer h2")
+
+    h1.textContent.split("").forEach(function (elem) {
+        clutter1 += `<span>${elem}</span>`
+    })
+    h1.innerHTML = clutter1
+
+    h2.textContent.split("").forEach(function (elem) {
+        clutter2 += `<span>${elem}</span>`
+    })
+    h2.innerHTML = clutter2
+
+
+    footerText.addEventListener("mouseenter", function () {
+        gsap.to("#footer h1 span", {
+            opacity: 0,
+            stagger: 0.05
+        })
+        gsap.to("#footer h2 span", {
+            delay: 0.35,
+            opacity: 1,
+            stagger: 0.1
+        })
+    })
+    footerText.addEventListener("mouseleave", function () {
+        gsap.to("#footer h1 span", {
+            opacity: 1,
+            stagger: 0.1,
+            delay: 0.35,
+
+        })
+        gsap.to("#footer h2 span", {
+            opacity: 0,
+            stagger: 0.05
+    })
+  })
+}
+
 
 loco()
 loadingAnimation()
-playvideo()
 cursorAnimation()
-cursorAnimation()
+flagAnimation()
 magnetAnimation()
-
+sheryAnimation()
+footerAnimation()
 
