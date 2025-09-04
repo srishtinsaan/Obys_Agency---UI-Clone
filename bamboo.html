@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <style>
+    body{
+      margin: 0;
+      height: 100vh;
+      /*background: #0268BD;*/
+      background: skyblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 800px;
+    }
+
+    .copter {
+      position: relative;
+      width: 100px;
+      height: 20px;
+      animation: float 2s ease-in-out infinite;
+      transform-style: preserve-3d;
+    }
+
+    .stick {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 7px;
+      height: 50px;
+      background: #e1b12c;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .headband {
+      position: absolute;
+      top: 50px;  
+      left: 50%;
+      width: 40px;
+      height: 20px;
+      background: #e1b12c; 
+      border-radius: 40px 40px 0 0; 
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
+    .blades {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100px;
+      height: 10px;
+      transform: translateX(-50%) rotateX(250deg);
+      transform-origin: center center;
+      animation: spin 0.11s linear infinite;
+      z-index: 3;
+    }
+    .circle{
+      position: absolute;
+      top: -3.2vw; /* stick ke top se start */
+      left: 50%;
+      width: 100px;
+      height: 90px;
+      border: 2px solid white;
+      border-radius: 50%;
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      /* animation: spin 0.0001s linear infinite; */
+      transform: translateX(-50%) rotateX(58deg);
+      /* z-index: ;  */
+            /* filter: blur(1px); */
+
+      pointer-events: none;
+    }
+
+
+    
+    .blade-part {
+      width: 100%;
+      height: 100%;
+      background: white;
+      /*border-radius: 50%;*/
+      /* opacity: 0.2; */
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* filter: blur(1px); */
+      /* box-shadow: 0 0 8px 2px rgba(225, 177, 44, 0.6); */
+      background-clip: padding-box;
+    }
+
+    .blade-part:nth-child(2) {
+      transform: rotateZ(45deg);
+    }
+
+    .blade-part:nth-child(3) {
+      transform: rotateZ(90deg);
+    }
+
+    .blade-part:nth-child(4) {
+      transform: rotateZ(135deg);
+    }
+
+    .blade-part:nth-child(5) {
+      transform: rotateZ(180deg);
+    }
+
+    @keyframes spin {
+      from {
+        transform: translateX(-50%) rotateX(60deg) rotateZ(0deg);
+      }
+      to {
+        transform: translateX(-50%) rotateX(60deg) rotateZ(360deg);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="copter">
+    <div class="stick"></div>
+    <div class="headband"></div>
+    <div class="circle"></div>
+    <div class="blades">
+      <div class="blade-part"></div>
+      <!-- <div class="blade-part"></div>  -->
+      <!-- <div class="blade-part"></div>
+      <div class="blade-part"></div>
+      <div class="blade-part"></div> --> 
+    </div>
+  </div>
+
+</body>
+</html>

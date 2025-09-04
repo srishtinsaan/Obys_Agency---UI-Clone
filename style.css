@@ -606,7 +606,7 @@ html,body{
     font-weight: 500;
 }
 #footer h5{
-     font-size: 1.1vw;
+    font-size: 1.1vw;
     font-weight: 500;
 }
 ._canvas_container{
@@ -810,6 +810,7 @@ html,body{
 .image-div:nth-child(3){
     margin-top: 0vw;
 }
+
 .page3-circle1{
     display: none;
 }
@@ -987,22 +988,13 @@ html,body{
     -webkit-text-stroke: 1px white;
     color: transparent;
 }
-#footer{
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-    font-family: "plain light";
-    /* padding-left: 10vw; */
-    /* margin-top: 20vh; */
-}
-#footer .underline{
-    height: 0.2px;
-    width: 68%;
-    background-color: #fff;
-    margin: 2vw 0vw;
+#footer-div {
+    display: flex;
+    flex-direction: column; /* Stack Socials, Address, Say Hi vertically */
+    gap: 5vh; /* space between each section */
+    /* background-color: green; */
     margin-left: -20%;
-    padding-right: 80vw;
-    overflow-x: hidden;
+    
 }
 #footer h1 {
     font-size: 10vw;
@@ -1017,7 +1009,17 @@ html,body{
     font-weight: 100;
     font-family: "silk serif";
     left: 0%;
-    top: -28%;
+    margin-top: -3vh;
+}
+#footer .underline{
+    height: 0.2px;
+    width: 68%;
+    background-color: #fff;
+    margin: 2vw 0vw;
+    margin-left: -20%;
+    padding-right: 80vw;
+    overflow-x: hidden;
+    margin-bottom: 4vh;
 }
 #footer-text h2 {
     font-size: 2vh;
@@ -1029,41 +1031,43 @@ html,body{
     display: none;
 
 }
-#footer-text {
-    position: relative;
-    /* margin-left: -20%; */
+#footer .box  {
     /* background-color: red; */
+    margin-left: 0;
 }
-#footer-text h2 span {
-    font-family: "silk serif";
-    opacity: 0;
-    -webkit-text-stroke: 1px #fff;
-    color: transparent;
-    /* margin-left: -20%; */
 
-}
-#footer .box h6{
+#footer .box h6 {
     font-size: 4vw;
     font-weight: 500;
-    margin: 6vh;
-    margin-left: -70%;
-
+    margin-bottom: 2vh; /* keep heading close to its content */
 }
-#footer .box h5{
+
+#footer .box h5 {
     font-size: 5vw;
     font-weight: 500;
-    margin-left: -70%;
-
+    margin-left: 0; 
+    margin-bottom: 0.3vh; 
 }
-#footer h5{
+
+#footer h5 {
     font-size: 4vw;
     font-weight: 500;
-    margin-left: -20%;
-    
+    margin-left: 0; 
 }
+
 ._canvas_container{
     z-index: 9999999999999 !important;
     pointer-events: none;
+}
+.last-underline{
+    height: 0.2px;
+    width: 68%;
+    background-color: #fff;
+    margin-left: -20%;
+    padding-right: 80vw;
+    overflow-x: hidden;
+    margin-top: 7vh;
+    margin-bottom: 4vh;
 }
 #flag{
     height: 25vw;
@@ -1072,12 +1076,14 @@ html,body{
     left:0;
     transform: translate(-50%, -50%);
     opacity: 0;
+    /* background-color: red; */
 }
 #hero3{
     /* background-color: red; */
     position: relative; 
     z-index: 9999;
 }
+
 }
 
 

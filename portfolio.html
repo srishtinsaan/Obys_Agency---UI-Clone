@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'Rockybilly';
+    src: url('./fonts/Rockybilly.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+html,body{
+    height: 100%;
+    width:  100%;
+    /* overflow: hidden; */
+}
+
+#loader h1{
+    background-color: rgb(23, 22, 22);
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* font-family: Rockybilly; */
+    font-size: 4vh;
+    font-family: Rockybilly;
+    color:transparent;
+    background-image: linear-gradient(90deg, transparent 0%, white 50%, transparent 100%);
+    background-size: 200%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: spotlight 3.3s linear infinite;
+    user-select: none;
+    z-index: 99999999;
+}
+
+@keyframes spotlight{
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    } 
+}
+#main{
+    background-color: #000000;
+
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 3px;
+  border-radius: 5px;
+  background: #ffffff;
+  z-index: 9999;
+}
+
+#page1{
+    height: 100vh;
+    position: relative;
+    /* display: flex; */
+
+} 
+
+#page1 #nav{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw;
+    padding-left: 9vw;
+    padding-right: 5vw;
+    user-select: none;
+}
+#nav-part2{
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3vw;
+}
+#nav h1{
+    font-family: Rockybilly;
+    font-size: 1.1vw;
+}
+#nav-part2 a{
+    text-decoration: none;
+    font-size: 1.3vw;
+    font-family: "plain light";
+}
+#content{
+    height: 80vh;
+    margin: 4vw;
+    position: absolute;
+    width: 40%;
+    /* background-color: red; */
+    margin-left: 9vw;
+    
+}
+#page1 #image{
+    height: 60%;
+    /* margin:4vw; */
+    width: 30%;
+    right: 3vw;
+    margin: 4vw;
+    position: absolute;
+    /* background-color: green; */
+}
+#page2{
+    height: 600vh;
+}
