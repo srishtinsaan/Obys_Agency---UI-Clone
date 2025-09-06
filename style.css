@@ -628,6 +628,97 @@ html,body{
 }
 
 @media(max-width : 600px){
+
+/* loader */
+
+#loader{
+    height: 100%;
+    width:  100%;
+    position: fixed;
+    background-color: #000000;
+    z-index: 999;
+    padding: 25vh 10vw;
+}
+.line {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1vw; /* small gap between h1 and h2 */
+    flex-wrap: wrap; /* still allows wrap on small screens */
+}
+#line1-part1{
+    /* background-color: #3e902d; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+
+}
+#line1-part1 h5, #line1-part1 h6{
+    font-size: 3vw;
+    font-family: silk serif ; 
+    font-weight: 100;
+    padding-right: 25px;
+
+}
+#line1-part1 h5{
+    /* background-color: grey; */
+    width: 5vw;
+    text-align: right;
+}
+.line h2 {
+    font-size: 6vw;
+    font-weight: 300;
+    text-transform: uppercase;
+    animation-name: anime;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    /* margin-left: 0.5rem; spacing to the right of h1 */
+    /* width: auto; remove fixed width */
+    /* background-color: blue; */
+    margin: 0;
+    padding: 0;
+}
+.line h1 {
+    font-size: 4vh;
+    text-transform: uppercase;
+    font-family: plain regular;
+    text-align: left;
+    white-space: nowrap; /* keep text in one line */
+    
+}
+/* loader animation */
+@keyframes anime {
+    0%{
+        font-family: plain light;
+        -webkit-text-stroke: 1px white;
+        color: white;
+        opacity: 1;
+    }
+    47%{
+        font-family: plain light;
+        -webkit-text-stroke: 1px white;
+        color: white;
+        font-weight: 500;
+        opacity: 0;
+    }
+    50%{
+        font-family: silk serif;
+        -webkit-text-stroke: 1px white;
+        color: transparent;
+        font-weight: 500;
+        opacity: 1;
+    }
+    100%{
+        font-family: silk serif;
+        -webkit-text-stroke: 1px white;
+        font-weight: 500;
+        color: transparent;
+        opacity: 0;
+
+    }
+}
     
 #page1{
     height: 70vh;
@@ -1083,6 +1174,8 @@ html,body{
     position: relative; 
     z-index: 9999;
 }
+
+
 
 }
 

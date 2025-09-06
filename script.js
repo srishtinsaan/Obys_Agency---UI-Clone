@@ -123,8 +123,8 @@ tl.from(`#line1-part1, .line h2`,{
 
 tl.to(`#loader`,{
     opacity: 0,
-    duration:0.7,
-    // delay:2.2,
+    // duration:0.7,
+    delay:2.2,
 })
 
 
